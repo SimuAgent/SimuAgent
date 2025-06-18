@@ -1,6 +1,6 @@
 """
 2025.3.16
-2025.4.1
+2025.3.18
 4.49.0
 0.16.0.dev0
 __UNSLOTH_VERSIONING__
@@ -129,7 +129,7 @@ class UnslothAlignPropConfig(AlignPropConfig):
     )
     def __init__(
         self,
-        exp_name = 'quick_start_with_tools',
+        exp_name = 'quick_start',
         run_name = '',
         seed = 3407,
         log_with = None,
