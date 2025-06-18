@@ -348,7 +348,6 @@ class UnslothGRPOEnvTrainer(UnslothGRPOTrainer):
             rewards_to_log = rewards.tolist()
 
             if self.accelerator.is_main_process:
-                breakpoint()
                 if is_rich_available():
                     print_prompt_completions_sample(
                         [prompts_to_log[1]],

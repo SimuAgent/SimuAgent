@@ -213,8 +213,6 @@ class ToolReflectionEnv(ToolEnv):
         for k, v in self.sampling_args.items():
             setattr(custom_sp, k, v)
 
-        breakpoint()
-
         final_states = []
         
         # if not is_eval_step:
@@ -222,7 +220,6 @@ class ToolReflectionEnv(ToolEnv):
         
         # Process each branch sequentially
         for idx, (prompt, ref_answer, task) in enumerate(zip(prompts, answers, tasks)):
-            breakpoint()
             # If previous branch has reflection results, put them in current branch's initial messages
             if mode == "train" and idx > 0 and (reflection_messages[idx-1] and 'None' not in reflection_messages[idx-1][-1]["content"]):  # TODO: use better method to check if the last message has none
                 # Here you can choose message role, like system or assistant, depending on actual situation
@@ -537,8 +534,6 @@ Guidelines
         # If overall the dictionaries match (ignoring list order), no reflection is needed.
         if dicts_equal_ignoring_list_order(answer_result, ref_result):
             return None
-        
-        breakpoint()
 
         # Define a recursive function to compare nested data structures.
         def compare_structures(a, b, path=""):

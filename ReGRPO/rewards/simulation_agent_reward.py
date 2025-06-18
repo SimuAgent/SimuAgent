@@ -43,8 +43,6 @@ class SimuAgentReward(BaseReward):
         gen_code_list = []
         ref_code_list = []
         
-        breakpoint()
-        
         for i, (response, correct_answer, each_init_code) in enumerate(zip(responses, answer, init_code)):
             try:
                 # Extract codes to test
@@ -75,8 +73,6 @@ class SimuAgentReward(BaseReward):
                 # Execute test codes
                 exec(generated_code, gen_globals)
                 exec(reference_code, ref_globals)
-                
-                breakpoint()
                 
                 # Get the result dictionaries
                 gen_dict = gen_globals.get('system_dict', {})
