@@ -1,0 +1,30 @@
+
+================================================================================
+CONNECTION ANALYSIS
+================================================================================
+Total connections available: 10
+Connections used during conversion: 6
+Unused connections: 4
+Connection usage ratio: 60.00%
+
+USED CONNECTIONS (in organized order):
+--------------------------------------------------
+   1. Gen1/A -> Bus2/A
+   2. Gen1/B -> Bus2/B
+   3. Gen1/C -> Bus2/C
+   4. Load1/A -> Bus1/a
+   5. Load1/B -> Bus1/b
+   6. Load1/C -> Bus1/c
+
+USED CONNECTIONS (compact grouped format):
+--------------------------------------------------
+  Gen1: A -> Bus2/A, B -> Bus2/B, C -> Bus2/C
+  Load1: A -> Bus1/a, B -> Bus1/b, C -> Bus1/c
+
+UNUSED CONNECTIONS (probably wrong):
+--------------------------------------------------
+   1. PI_Section_Line1/A -> Bus2/a
+   2. PI_Section_Line1/B -> Bus1/b
+   3. PI_Section_Line1/B -> Bus2/b
+   4. PI_Section_Line1/C -> Bus1/c
+================================================================================

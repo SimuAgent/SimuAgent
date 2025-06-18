@@ -1,0 +1,77 @@
+{
+    "Three-Phase V-I Measurement": {
+        "allowed_keys": ["Type"],
+        "basic_parameters": {},
+        "notes": "This block has no configurable parameters"
+    },
+    "Three-Phase Parallel RLC Load": {
+        "allowed_keys": [
+            "Type",
+            "Nominal phase-to-phase voltage Vn (Vrms)",
+            "Nominal frequency fn (Hz)",
+            "Active power P (W)",
+            "Inductive reactive Power QL (positive var)",
+            "Capacitive reactive Power Qc (negative var)"
+        ],
+        "basic_parameters": {
+            "Nominal phase-to-phase voltage Vn (Vrms)": "1000",
+            "Nominal frequency fn (Hz)": "60",
+            "Active power P (W)": "10e3",
+            "Inductive reactive Power QL (positive var)": "100",
+            "Capacitive reactive Power Qc (negative var)": "100"
+        }
+    },
+    "Three-Phase Source": {
+        "allowed_keys": [
+            "Type",
+            "Phase-to-phase voltage (Vrms)",
+            "Frequency (Hz)"
+        ],
+        "basic_parameters": {
+            "Phase-to-phase voltage (Vrms)": "25e3",
+            "Frequency (Hz)": "60"
+        }
+    },
+    "Three-Phase PI Section Line": {
+        "allowed_keys": [
+            "Type",
+            "Line length (km)",
+            "Frequency used for rlc specification (Hz)"
+        ],
+        "basic_parameters": {
+            "Line length (km)": "100",
+            "Frequency used for rlc specification (Hz)": "60"
+        },
+        "notes": "Common invalid keys: 'Length (km)', 'Distance (km)', 'R (ohms/km)', 'X (ohms/km)', 'G (ohms)', 'B (mH/km)', 'Rated voltage (Vrms)', 'Initial temperature (ºC)'"
+    },
+    "Three-Phase Transformer (Two Windings)": {
+        "allowed_keys": [
+            "Type",
+            "Nominal power and frequency [Pn(VA), fn(Hz)]",
+            "Winding 1 parameters [V1 Ph-Ph(Vrms), R1(pu), L1(pu)]",
+            "Winding 2 parameters [V2 Ph-Ph(Vrms), R2(pu), L2(pu)]"
+        ],
+        "basic_parameters": {
+            "Nominal power and frequency [Pn(VA), fn(Hz)]": "[250e6, 60]",
+            "Winding 1 parameters [V1 Ph-Ph(Vrms), R1(pu), L1(pu)]": "[735e3, 0.002, 0.08]",
+            "Winding 2 parameters [V2 Ph-Ph(Vrms), R2(pu), L2(pu)]": "[315e3, 0.002, 0.08]"
+        },
+        "notes": "Common invalid keys: 'Primary voltage', 'Secondary voltage', 'R12 (ohms)', 'X12 (ohms)', etc."
+    },
+    "Three-Phase Transformer (Three Windings)": {
+        "allowed_keys": [
+            "Type",
+            "Nominal power and frequency [Pn(VA), fn(Hz)]",
+            "Winding 1 parameters [V1 Ph-Ph(Vrms), R1(pu), L1(pu)]",
+            "Winding 2 parameters [V2 Ph-Ph(Vrms), R2(pu), L2(pu)]",
+            "Winding 3 parameters [V3 Ph-Ph(Vrms), R3(pu), L3(pu)]"
+        ],
+        "basic_parameters": {
+            "Nominal power and frequency [Pn(VA), fn(Hz)]": "[250e6, 60]",
+            "Winding 1 parameters [V1 Ph-Ph(Vrms), R1(pu), L1(pu)]": "[735e3, 0.002, 0.08]",
+            "Winding 2 parameters [V2 Ph-Ph(Vrms), R2(pu), L2(pu)]": "[315e3, 0.002, 0.08]",
+            "Winding 3 parameters [V3 Ph-Ph(Vrms), R3(pu), L3(pu)]": "[315e3, 0.002, 0.08]"
+        },
+        "notes": "Common invalid name: 'Three-Winding Transformer'. Correct name: 'Three-Phase Transformer (Three Windings)'"
+    }
+} 

@@ -1,0 +1,32 @@
+{
+  "Blocks": {
+    "Bus1": { "Type": "Three-Phase V-I Measurement", "Nominal Voltage kV": 0.4 },
+    "Bus2": { "Type": "Three-Phase V-I Measurement", "Nominal Voltage kV": 0.4 },
+    "Bus3": { "Type": "Three-Phase V-I Measurement", "Nominal Voltage kV": 0.4 },
+    "Bus4": { "Type": "Three-Phase V-I Measurement", "Nominal Voltage kV": 0.4 },
+
+    "Gen1": { "Type": "Three-Phase Source", "vm_pu": 1.02 },
+
+    "Load1": { "Type": "Three-Phase Parallel RLC Load", "Active power P (W)": "15000" },
+    "Load2": { "Type": "Three-Phase Parallel RLC Load", "Active power P (W)": "8000" },
+
+    "Line1": { "Type": "Three-Phase PI Section Line", "Line length (km)": "2.0" },
+    "Line2": { "Type": "Three-Phase PI Section Line", "Line length (km)": "2.0" },
+    "Transformer1": { "Type": "Three-Phase Transformer (Two Windings)"}
+  },
+
+  "Connections": [
+    ["Gen1/(A,B,C)",           "Bus1/(A,B,C)"],
+
+    ["Bus1/(a,b,c)",           "Line1/(A,B,C)"],
+    ["Line1/(a,b,c)",          "Bus2/(A,B,C)"],
+    ["Load1/(A,B,C)",          "Bus2/(a,b,c)"],
+
+    ["Bus1/(a,b,c)",           "Line2/(A,B,C)"],
+    ["Line2/(a,b,c)",          "Bus3/(A,B,C)"],
+
+    ["Bus3/(a,b,c)",           "Transformer1/(A,B,C)"],
+    ["Transformer1/(a,b,c)",   "Bus4/(A,B,C)"],
+    ["Load2/(A,B,C)",          "Bus4/(a,b,c)"]
+  ]
+}

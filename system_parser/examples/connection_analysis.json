@@ -1,0 +1,142 @@
+{
+  "summary": {
+    "total_connections": 10,
+    "used_count": 6,
+    "unused_count": 4,
+    "usage_ratio": 0.6
+  },
+  "used_connections_by_block": {
+    "Gen1": [
+      {
+        "readable": "Gen1/A -> Bus2/A",
+        "src_block": "Gen1",
+        "src_port": "A",
+        "tgt_block": "Bus2",
+        "tgt_port": "A",
+        "raw": [
+          "Gen1_A",
+          "Bus2_A"
+        ]
+      },
+      {
+        "readable": "Gen1/B -> Bus2/B",
+        "src_block": "Gen1",
+        "src_port": "B",
+        "tgt_block": "Bus2",
+        "tgt_port": "B",
+        "raw": [
+          "Gen1_B",
+          "Bus2_B"
+        ]
+      },
+      {
+        "readable": "Gen1/C -> Bus2/C",
+        "src_block": "Gen1",
+        "src_port": "C",
+        "tgt_block": "Bus2",
+        "tgt_port": "C",
+        "raw": [
+          "Gen1_C",
+          "Bus2_C"
+        ]
+      }
+    ],
+    "Load1": [
+      {
+        "readable": "Load1/A -> Bus1/a",
+        "src_block": "Load1",
+        "src_port": "A",
+        "tgt_block": "Bus1",
+        "tgt_port": "a",
+        "raw": [
+          "Load1_A",
+          "Bus1_a"
+        ]
+      },
+      {
+        "readable": "Load1/B -> Bus1/b",
+        "src_block": "Load1",
+        "src_port": "B",
+        "tgt_block": "Bus1",
+        "tgt_port": "b",
+        "raw": [
+          "Load1_B",
+          "Bus1_b"
+        ]
+      },
+      {
+        "readable": "Load1/C -> Bus1/c",
+        "src_block": "Load1",
+        "src_port": "C",
+        "tgt_block": "Bus1",
+        "tgt_port": "c",
+        "raw": [
+          "Load1_C",
+          "Bus1_c"
+        ]
+      }
+    ]
+  },
+  "unused_connections_by_block": {
+    "PI_Section_Line1": [
+      {
+        "readable": "PI_Section_Line1/A -> Bus2/a",
+        "src_block": "PI_Section_Line1",
+        "src_port": "A",
+        "tgt_block": "Bus2",
+        "tgt_port": "a",
+        "raw": [
+          "PI_Section_Line1_A",
+          "Bus2_a"
+        ]
+      },
+      {
+        "readable": "PI_Section_Line1/B -> Bus1/b",
+        "src_block": "PI_Section_Line1",
+        "src_port": "B",
+        "tgt_block": "Bus1",
+        "tgt_port": "b",
+        "raw": [
+          "PI_Section_Line1_B",
+          "Bus1_b"
+        ]
+      },
+      {
+        "readable": "PI_Section_Line1/B -> Bus2/b",
+        "src_block": "PI_Section_Line1",
+        "src_port": "B",
+        "tgt_block": "Bus2",
+        "tgt_port": "b",
+        "raw": [
+          "PI_Section_Line1_B",
+          "Bus2_b"
+        ]
+      },
+      {
+        "readable": "PI_Section_Line1/C -> Bus1/c",
+        "src_block": "PI_Section_Line1",
+        "src_port": "C",
+        "tgt_block": "Bus1",
+        "tgt_port": "c",
+        "raw": [
+          "PI_Section_Line1_C",
+          "Bus1_c"
+        ]
+      }
+    ]
+  },
+  "all_used_connections": [
+    "Gen1/A -> Bus2/A",
+    "Gen1/B -> Bus2/B",
+    "Gen1/C -> Bus2/C",
+    "Load1/A -> Bus1/a",
+    "Load1/B -> Bus1/b",
+    "Load1/C -> Bus1/c"
+  ],
+  "all_unused_connections": [
+    "PI_Section_Line1/A -> Bus2/a",
+    "PI_Section_Line1/B -> Bus1/b",
+    "PI_Section_Line1/B -> Bus2/b",
+    "PI_Section_Line1/C -> Bus1/c"
+  ]
+}

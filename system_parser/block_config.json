@@ -1,0 +1,216 @@
+{
+    "Three-Phase V-I Measurement": {
+        "Description": "The Three-Phase V-I Measurement block is used to measure instantaneous three-phase voltages and currents in a circuit. When connected in series with three-phase elements, it returns the three phase-to-ground or phase-to-phase peak voltages and currents.",
+        "Basic Parameters": {},
+        "Physical_Length": {
+            "Type": "negligible",
+            "Value": 0.0
+        },
+        "Ports": {
+            "A": {
+                "Type": "Conserving",
+                "Position": "Left"
+            },
+            "B": {
+                "Type": "Conserving",
+                "Position": "Left"
+            },
+            "C": {
+                "Type": "Conserving",
+                "Position": "Left"
+            },
+            "a": {
+                "Type": "Conserving",
+                "Position": "Right"
+            },
+            "b": {
+                "Type": "Conserving",
+                "Position": "Right"
+            },
+            "c": {
+                "Type": "Conserving",
+                "Position": "Right"
+            }
+        }
+    },
+    "Three-Phase Parallel RLC Load": {
+        "Description": "The Three-Phase Parallel RLC Load block implements a three-phase balanced load as a parallel combination of RLC elements. At the specified frequency, the load exhibits a constant impedance. The active and reactive powers absorbed by the load are proportional to the square of the applied voltage.",
+        "Basic Parameters": {
+            "Nominal phase-to-phase voltage Vn (Vrms)": "1000",
+            "Nominal frequency fn (Hz)": "60",
+            "Active power P (W)": "10e3",
+            "Inductive reactive Power QL (positive var)": "100",
+            "Capacitive reactive Power Qc (negative var)": "100"
+        },
+        "Physical_Length": {
+            "Type": "negligible",
+            "Value": 0.0
+        },
+        "Ports": {
+            "A": {
+                "Type": "Conserving",
+                "Position": "Top"
+            },
+            "B": {
+                "Type": "Conserving",
+                "Position": "Top"
+            },
+            "C": {
+                "Type": "Conserving",
+                "Position": "Top"
+            }
+        }
+    },
+    "Three-Phase Source": {
+        "Description": "The Three-Phase Source block implements a balanced three-phase voltage source with an internal R-L impedance. The block connects the three voltage sources in Y with a neutral connection that you can internally ground or make it accessible. You can specify the source internal resistance and inductance either directly by entering R and L values or indirectly by specifying the source inductive short-circuit level and X/R ratio.",
+        "Basic Parameters": {
+            "Phase-to-phase voltage (Vrms)": "25e3",
+            "Frequency (Hz)": "60"
+        },
+        "Physical_Length": {
+            "Type": "negligible",
+            "Value": 0.0
+        },
+        "Ports": {
+            "A": {
+                "Type": "Conserving",
+                "Position": "Right"
+            },
+            "B": {
+                "Type": "Conserving",
+                "Position": "Right"
+            },
+            "C": {
+                "Type": "Conserving",
+                "Position": "Right"
+            }
+        }
+    },
+    "Three-Phase PI Section Line": {
+        "Description": "The Three-Phase PI Section Line block implements a balanced three-phase transmission line model with parameters lumped in a PI section.",
+        "Basic Parameters": {
+            "Line length (km)": "100",
+            "Frequency used for rlc specification (Hz)": "60"
+        },
+        "Physical_Length": {
+            "Type": "configurable",
+            "Parameter": "Line length (km)",
+            "Default": 100.0
+        },
+        "Ports": {
+            "A": {
+                "Type": "Conserving",
+                "Position": "Left"
+            },
+            "B": {
+                "Type": "Conserving",
+                "Position": "Left"
+            },
+            "C": {
+                "Type": "Conserving",
+                "Position": "Left"
+            },
+            "a": {
+                "Type": "Conserving",
+                "Position": "Right"
+            },
+            "b": {
+                "Type": "Conserving",
+                "Position": "Right"
+            },
+            "c": {
+                "Type": "Conserving",
+                "Position": "Right"
+            }
+        }
+    },
+    "Three-Phase Transformer (Two Windings)": {
+        "Description": "This block implements a three-phase transformer using three single-phase transformers.",
+        "Basic Parameters": {
+            "Nominal power and frequency [Pn(VA), fn(Hz)]": "[250e6, 60]",
+            "Winding 1 parameters [V1 Ph-Ph(Vrms), R1(pu), L1(pu)]": "[735e3, 0.002, 0.08]",
+            "Winding 2 parameters [V2 Ph-Ph(Vrms), R2(pu), L2(pu)]": "[315e3, 0.002, 0.08]"
+        },
+        "Physical_Length": {
+            "Type": "negligible",
+            "Value": 0.0
+        },
+        "Ports": {
+            "A": {
+                "Type": "Conserving",
+                "Position": "Left"
+            },
+            "B": {
+                "Type": "Conserving",
+                "Position": "Left"
+            },
+            "C": {
+                "Type": "Conserving",
+                "Position": "Left"
+            },
+            "a": {
+                "Type": "Conserving",
+                "Position": "Right"
+            },
+            "b": {
+                "Type": "Conserving",
+                "Position": "Right"
+            },
+            "c": {
+                "Type": "Conserving",
+                "Position": "Right"
+            }
+        }
+    },
+    "Three-Phase Transformer (Three Windings)": {
+        "Description": "This block implements a three-phase transformer by using three single-phase transformers with three windings.",
+        "Basic Parameters": {
+            "Nominal power and frequency [Pn(VA), fn(Hz)]": "[250e6, 60]",
+            "Winding 1 parameters [V1 Ph-Ph(Vrms), R1(pu), L1(pu)]": "[735e3, 0.002, 0.08]",
+            "Winding 2 parameters [V2 Ph-Ph(Vrms), R2(pu), L2(pu)]": "[315e3, 0.002, 0.08]",
+            "Winding 3 parameters [V3 Ph-Ph(Vrms), R3(pu), L3(pu)]": "[315e3, 0.002, 0.08]"
+        },
+        "Physical_Length": {
+            "Type": "negligible",
+            "Value": 0.0
+        },
+        "Ports": {
+            "A": {
+                "Type": "Conserving",
+                "Position": "Left"
+            },
+            "B": {
+                "Type": "Conserving",
+                "Position": "Left"
+            },
+            "C": {
+                "Type": "Conserving",
+                "Position": "Left"
+            },
+            "a2": {
+                "Type": "Conserving",
+                "Position": "Right"
+            },
+            "b2": {
+                "Type": "Conserving",
+                "Position": "Right"
+            },
+            "c2": {
+                "Type": "Conserving",
+                "Position": "Right"
+            },
+            "a3": {
+                "Type": "Conserving",
+                "Position": "Right"
+            },
+            "b3": {
+                "Type": "Conserving",
+                "Position": "Right"
+            },
+            "c3": {
+                "Type": "Conserving",
+                "Position": "Right"
+            }
+        }
+    }
+}

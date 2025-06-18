@@ -1,0 +1,107 @@
+{
+    "Three-Phase V-I Measurement": {
+        "pandapower_element": "bus",
+        "parameter_mapping": {
+            "Nominal Voltage kV": "vn_kv",
+            "_BLOCK_NAME_": "name"
+        },
+        "default_params": {
+            "type": "b"
+        }
+    },
+    "Three-Phase Source": {
+        "pandapower_element": "gen",
+        "connection_port_group": ["A", "B", "C"],
+        "parameter_mapping": {
+            "vm_pu": "vm_pu",
+            "va_degree": "va_degree",
+            "_BLOCK_NAME_": "name"
+        },
+        "default_params": {
+            "va_degree": 0
+        }
+    },
+    "Three-Phase PI Section Line": {
+        "pandapower_element": "line",
+        "terminal_ports": {
+            "from_terminal_ports": ["A", "B", "C"],
+            "to_terminal_ports": ["a", "b", "c"]
+        },
+        "parameter_mapping": {
+            "Line length (km)": "length_km",
+            "_BLOCK_NAME_": "name"
+        },
+        "default_params": {
+            "std_type": "NA2XS2Y 1x240 RM/25 12/20 kV"
+        }
+    },
+    "Three-Phase Parallel RLC Load": {
+        "pandapower_element": "load",
+        "connection_port_group": ["A", "B", "C"],
+        "parameter_mapping": {
+            "Active power P (W)": "p_mw",
+            "Inductive reactive Power QL (positive var)": "q_mvar",
+            "Capacitive reactive Power Qc (negative var)": "q_mvar_cap",
+            "_BLOCK_NAME_": "name"
+        },
+        "value_transformations": {
+            "p_mw": {"scale": 0.000001},
+            "q_mvar": {"scale": 0.000001},
+            "q_mvar_cap": {"scale": -0.000001, "target_param": "q_mvar"}
+        },
+        "default_params": {
+            "const_z_percent": 0,
+            "const_i_percent": 0
+        }
+    },
+    "Three-Phase Transformer (Two Windings)": {
+        "pandapower_element": "trafo",
+        "terminal_ports": {
+            "hv_terminal_ports": ["A", "B", "C"],
+            "lv_terminal_ports": ["a", "b", "c"]
+        },
+        "parameter_mapping": {
+            "_BLOCK_NAME_": "name"
+        },
+        "value_transformations": {
+            "Nominal power and frequency [Pn(VA), fn(Hz)]": {
+                "parse_array": true,
+                "extract_index": 0,
+                "scale": 0.000001,
+                "target_param": "sn_mva"
+            },
+            "Winding 1 parameters [V1 Ph-Ph(Vrms), R1(pu), L1(pu)]": [
+                {
+                    "parse_array": true,
+                    "extract_index": 0,
+                    "scale": 0.001,
+                    "target_param": "vn_hv_kv"
+                },
+                {
+                    "parse_array": true,
+                    "extract_index": 1,
+                    "scale": 100,
+                    "target_param": "vkr_percent"
+                },
+                {
+                    "parse_array": true,
+                    "extract_index": 2,
+                    "scale": 100,
+                    "target_param": "vk_percent"
+                }
+            ],
+            "Winding 2 parameters [V2 Ph-Ph(Vrms), R2(pu), L2(pu)]": {
+                "parse_array": true,
+                "extract_index": 0,
+                "scale": 0.001,
+                "target_param": "vn_lv_kv"
+            }
+        },
+        "default_params": {
+            "parallel": 1,
+            "tap_phase_shifter": false,
+            "pfe_kw": 0,
+            "i0_percent": 0
+        }
+    }
+}

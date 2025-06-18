@@ -1,0 +1,46 @@
+{
+    "Blocks": {
+        "Bus1": {"Type": "Three-Phase V-I Measurement", "Nominal Voltage kV": 0.4},
+        "Load1": {
+            "Type": "Three-Phase Parallel RLC Load",
+            "Active power P (W)": "29100"
+        },
+        "Bus2": {"Type": "Three-Phase V-I Measurement", "Nominal Voltage kV": 0.4},
+        "Load2": {
+            "Type": "Three-Phase Parallel RLC Load",
+            "Active power P (W)": "37200"
+        },
+        "Bus3": {"Type": "Three-Phase V-I Measurement", "Nominal Voltage kV": 0.4},
+        "Gen1": {"Type": "Three-Phase Source", "Active power P (W)": "29000"},
+        "Bus4": {"Type": "Three-Phase V-I Measurement", "Nominal Voltage kV": 0.4},
+        "Gen2": {"Type": "Three-Phase Source", "Active power P (W)": "40100"},
+        "PI_Section_Line1": {
+            "Type": "Three-Phase PI Section Line",
+            "Nominal Voltage kV": 0.4
+        },
+        "PI_Section_Line2": {
+            "Type": "Three-Phase PI Section Line",
+            "Nominal Voltage kV": 0.4
+        },
+        "PI_Section_Line3": {
+            "Type": "Three-Phase PI Section Line",
+            "Nominal Voltage kV": 0.4
+        }
+    },
+    "Connections": [
+        ["Load1/(A,B,C)", "Bus1/(a,b,c)"],
+        ["Load2/(A,B,C)", "Bus2/(a,b,c)"],
+        ["Gen1/(A,B,C)", "Bus3/(A,B,C)"],
+        ["Gen2/(A,B,C)", "Bus4/(A,B,C)"],
+        ["PI_Section_Line1/(a,b,c)", "Bus1/(A,B,C)"],
+        ["PI_Section_Line1/(a,b,c)", "Bus2/(a,b,c)"],
+        ["PI_Section_Line2/(A,B,C)", "Bus2/(A,B,C)"],
+        ["PI_Section_Line2/(a,b,c)", "Bus3/(a,b,c)"],
+        ["PI_Section_Line3/(A,B,C)", "Bus3/(A,B,C)"],
+        ["PI_Section_Line3/(a,b,c)", "Bus4/(a,b,c)"],
+        ["PI_Section_Line1/(B,C)", "Bus1/(b,c)"],
+        ["PI_Section_Line1/(A,B)", "Bus2/(a,b)"],
+        ["PI_Section_Line1/(C,A)", "Bus3/(c,a)"],
+        ["PI_Section_Line1/(B,C)", "Bus4/(b,c)"]
+    ]
+}
